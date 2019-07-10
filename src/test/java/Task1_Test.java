@@ -1,28 +1,14 @@
-import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
-public class Task_1 {
-    WebDriver driver;
-    String baseURL;
+public class Task_1 extends BaseTest{
 
-    @Before
-    public void beforeTest(){
-        System.setProperty("webdriver.chrome.driver", "drv/chromedriver.exe");
-        baseURL ="https://www.sberbank.ru/ru/person";
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-        driver.get(baseURL);
-    }
     @Test
-    public void maintest() {
+    public void main_Test() {
+        driver.get(baseURL);
         driver.findElement(By.xpath("//li//span[(text()='Страхование')]")).click();
         driver.findElement(By.xpath("//li[@class='lg-menu__sub-item']//*[contains(text(),'Путешествия и покупки')]")).click();
         Assert.assertEquals("Страхование путешественников",driver.findElement(By.xpath("//h3[text()='Страхование путешественников']")).getText());
@@ -59,13 +45,7 @@ public class Task_1 {
         Assert.assertEquals("Заполнены не все обязательные поля",driver.findElement(By.xpath("//*[text()='Заполнены не все обязательные поля']")).getText());
     }
 
-    public void fillField(By locator, String value){
-        driver.findElement(locator).clear();
-        driver.findElement(locator).sendKeys(value);
-    }
 
-    @After
-    public void afterTest(){
-      driver.quit();
-    }
+
+
 }
