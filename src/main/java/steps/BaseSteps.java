@@ -1,5 +1,8 @@
+package steps;
+
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -7,12 +10,13 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-public class Base {
-    protected WebDriver driver;
-    protected String baseURL;
+public class BaseSteps {
+    protected static WebDriver driver;
+    protected static String baseURL;
     public static Properties properties = TestProperties.getInstance().getProperties();
+
     @BeforeClass
-    public void beforeTest(){
+    public static void beforeTest(){
         switch (properties.getProperty("browser")){
             case "firefox":
                 System.setProperty("webdriver.gecko.driver",properties.getProperty("webdriver.gecko.driver"));
@@ -28,13 +32,17 @@ public class Base {
         }
 
         baseURL =properties.getProperty("app.url");
-        driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         driver.manage().window().maximize();
+        driver.get(baseURL);
 
     }
     @AfterClass
-    public void afterTest(){
+    public static void afterTest(){
         driver.quit();
+    }
+    public void fillField(By locator, String value){
+        driver.findElement(locator).clear();
+        driver.findElement(locator).sendKeys(value);
     }
 }

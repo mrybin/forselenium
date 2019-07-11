@@ -1,14 +1,16 @@
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 
 import java.util.ArrayList;
 
-public class Task_1 extends BaseTest{
+public class Task1_Test extends BaseTest{
 
     @Test
+    @Ignore
     public void main_Test() {
-        driver.get(baseURL);
+
         driver.findElement(By.xpath("//li//span[(text()='Страхование')]")).click();
         driver.findElement(By.xpath("//li[@class='lg-menu__sub-item']//*[contains(text(),'Путешествия и покупки')]")).click();
         Assert.assertEquals("Страхование путешественников",driver.findElement(By.xpath("//h3[text()='Страхование путешественников']")).getText());
