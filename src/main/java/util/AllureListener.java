@@ -6,7 +6,7 @@ import org.openqa.selenium.TakesScreenshot;
 import ru.yandex.qatools.allure.annotations.Attachment;
 import steps.BaseSteps;
 
-public class AllureListner extends ru.yandex.qatools.allure.junit.AllureRunListener {
+public class AllureListener extends ru.yandex.qatools.allure.junit.AllureRunListener {
 
     @Override
     public void testFailure(Failure failure){

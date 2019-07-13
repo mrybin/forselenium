@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import util.TestProperties;
 
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -13,6 +14,11 @@ import java.util.concurrent.TimeUnit;
 public class BaseSteps {
     protected static WebDriver driver;
     protected static String baseURL;
+
+    public static WebDriver getDriver() {
+        return driver;
+    }
+
     public static Properties properties = TestProperties.getInstance().getProperties();
 
     @BeforeClass

@@ -9,7 +9,7 @@ import steps.BaseSteps;
 
 import java.util.ArrayList;
 
-public class Task2_Test extends BaseSteps {
+public class Task2Test extends BaseSteps {
 
     @Test
     @Ignore

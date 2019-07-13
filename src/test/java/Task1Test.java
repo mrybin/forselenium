@@ -2,10 +2,11 @@ import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import steps.BaseSteps;
 
 import java.util.ArrayList;
 
-public class Task1_Test extends BaseTest{
+public class Task1Test extends BaseSteps {
 
     @Test
     @Ignore

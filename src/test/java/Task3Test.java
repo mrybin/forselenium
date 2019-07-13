@@ -1,13 +1,15 @@
 import org.junit.Test;
+import ru.yandex.qatools.allure.annotations.Title;
 import steps.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Task3_Test extends BaseSteps{
+public class Task3Test extends BaseSteps{
 
 
     @Test
+    @Title("Страхование")
     public void insure_Test () {
         MainSteps mainSteps = new MainSteps();
         InsuranceTravelSteps insuranceTravel = new InsuranceTravelSteps();
