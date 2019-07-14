@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import steps.BaseSteps;
 
 public class InsuranceTravel {
 
@@ -13,7 +14,7 @@ public class InsuranceTravel {
     @FindBy (xpath = "//h3[text()='Страхование путешественников']")
     public WebElement instrav;
 
-    public InsuranceTravel(WebDriver driver){
-        PageFactory.initElements(driver,this);
+    public InsuranceTravel(){
+        PageFactory.initElements(BaseSteps.getDriver(),this);
     }
 }

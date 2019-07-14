@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import steps.BaseSteps;
 
 public class InsurancePage2 {
 
@@ -46,8 +47,8 @@ public class InsurancePage2 {
     @FindBy (xpath = "//*[text()='Заполнены не все обязательные поля']")
     public WebElement notAll;
 
-    public InsurancePage2(WebDriver driver){
-        PageFactory.initElements(driver,this);
+    public InsurancePage2(){
+        PageFactory.initElements(BaseSteps.getDriver(),this);
     }
     public void fillField(String fieldName, String value){
         switch (fieldName){

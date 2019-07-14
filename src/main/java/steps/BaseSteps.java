@@ -1,13 +1,14 @@
 package steps;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+import cucumber.api.java.Before;
+import cucumber.api.java.After;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import util.TestProperties;
 
+import java.util.ArrayList;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -20,8 +21,12 @@ public class BaseSteps {
     }
 
     public static Properties properties = TestProperties.getInstance().getProperties();
+    public void nextpage(){
+        ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs2.get(1));
+    }
 
-    @BeforeClass
+    @Before
     public static void beforeTest(){
         switch (properties.getProperty("browser")){
             case "firefox":
@@ -43,7 +48,7 @@ public class BaseSteps {
         driver.get(baseURL);
 
     }
-    @AfterClass
+    @After
     public static void afterTest(){
         driver.quit();
     }
