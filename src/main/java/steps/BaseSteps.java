@@ -21,7 +21,7 @@ public class BaseSteps {
     }
 
     public static Properties properties = TestProperties.getInstance().getProperties();
-    public void nextpage(){
+    public static void nextpage(){
         ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(tabs2.get(1));
     }

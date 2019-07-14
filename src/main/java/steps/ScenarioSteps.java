@@ -26,7 +26,7 @@ public class ScenarioSteps {
     @When("нажатие на кнопку оформить страховку")
     public void sendInsuranceTravelStep(){
         insTravel.sendInsuranceTravelStep();
-        insTravel.nextpage();
+        BaseSteps.nextpage();
     }
     @When("выбрать минимальное страхование")
     public void selectmin(){

@@ -6,7 +6,7 @@ import ru.yandex.qatools.allure.annotations.Step;
 
 import java.util.HashMap;
 
-public class InsurancePage2Steps extends BaseSteps{
+public class InsurancePage2Steps {
 
     @Step("поле (0) заполняется значением (1)")
     public void fillFieldStep(String field, String value){

@@ -5,7 +5,7 @@ import org.junit.Assert;
 import pages.InsuranceTravel;
 import ru.yandex.qatools.allure.annotations.Step;
 
-public class InsuranceTravelSteps extends BaseSteps{
+public class InsuranceTravelSteps {
 
     @Step ("Выполнено нажатие на кнопку Оформить заявку")
     public void sendInsuranceTravelStep(){

@@ -3,7 +3,7 @@ package steps;
 import pages.InsurancePage1;
 import ru.yandex.qatools.allure.annotations.Step;
 
-public class InsurancePage1Steps extends BaseSteps{
+public class InsurancePage1Steps {
 
     @Step("Выбор минимального страхования")
     public void selectmin(){
